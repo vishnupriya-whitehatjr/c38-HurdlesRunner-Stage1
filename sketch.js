@@ -14,15 +14,16 @@ var track, car1_img, car2_img, car3_img, car4_img;
 
 function preload(){
   track = loadImage("images/track.jpg");
-  //car1_img = loadImage("../images/car1.png");
- // car2_img = loadImage("../images/car2.png");
- // car3_img = loadImage("../images/car3.png");
- // car4_img = loadImage("../images/car4.png");
+  car1_img = loadImage("images/player1.png");
+  car2_img = loadImage("images/player2.png");
+  car3_img = loadImage("images/player3.png");
+  car4_img = loadImage("images/player4.png");
  // ground = loadImage("../images/ground.png");
+  back_img = loadImage("images/background2.png");
 }
 
 function setup(){
-  canvas = createCanvas(displayWidth - 20, displayHeight-30);
+  canvas = createCanvas(displayWidth - 20, displayHeight);
   database = firebase.database();
   game = new Game();
   game.getState();
@@ -31,6 +32,7 @@ function setup(){
 
 
 function draw(){
+  background(back_img);
   if(playerCount === 4){
     game.update(1);
   }
